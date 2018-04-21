@@ -1,0 +1,23 @@
+{
+	"style": [
+		"foundry-light",
+		"reset",
+		"component-light",
+		"document",
+		"blocks",
+		"layout",
+		"brand",
+		"toolbar",
+		"featured",
+		"bloggers",
+		"entry",
+		"categories",
+		"comments",
+		"tags",
+		"login",
+		"dashboard",
+		"magazine",
+		"grid",
+		"patch"
+	]
+}

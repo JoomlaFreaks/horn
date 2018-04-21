@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR</name>
+	<author>Web357 (Yiannis Christodoulou)</author>
+	<creationDate>26 Feb 2018</creationDate>
+	<copyright>Copyright (C) 2018 - Web357. All rights reserved.</copyright>
+	<license>GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>support@web357.eu</authorEmail>
+	<authorUrl>https://www.web357.eu/</authorUrl>
+	<version>3.2.5</version>
+	<description>A beautiful and functional EU Cookie Law Compliance Joomla! Plugin that provides a mechanism for informing your visitors about how you use cookies on your website in an elegant manner. It includes a variety of features (responsive, multilingual, include/exclude from pages, etc.) and parameters (block cookies, change colors, custom CSS, animation duration, etc.).</description>
+	
+	<files>
+		<folder>assets</folder>
+		<folder>elements</folder>
+		<folder>language</folder>
+		<filename plugin="cookiespolicynotificationbar">cookiespolicynotificationbar.php</filename>
+		<filename>index.html</filename>
+	</files>
+	
+	<scriptfile>cookiespolicynotificationbar.scriptfile.php</scriptfile>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/web357framework/elements">
+			
+			<!-- ::: PLUGIN ::: -->
+			<fieldset name="basic">
+			
+				<!-- BEGIN: Version Check -->
+				<field type="header" class="w357_large_header" label="W357FRM_HEADER_VERSION_CHECK" />
+				<field name="info" id="info" type="info" extension_type="plugin" extension_name="cookiespolicynotificationbar" real_name="PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR" plugin_type="system" label="" addfieldpath="/plugins/system/web357framework/elements" />
+				<!-- END: Version Check -->
+				
+				<!-- BEGIN: PRO Version -->
+				<field type="header" class="w357_large_header" label="PRO Version" />
+				<field name="download_id" type="textp" label="Download ID" default="" description="Enter your Download ID to enable the live updates. Log into your account on the web357.eu website and find your Download ID from the main menu My Account > Payment History." size="25" external_url="https://www.web357.eu/download-id" />
+				<!-- END: PRO Version -->
+				
+				<!-- BEGIN: JED Review -->
+				<field name="jedreview" id="jedreview" type="jedreview" extension_type="module" extension_name="cookiespolicynotificationbar" real_name="PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR" plugin_type="system" label="" addfieldpath="/plugins/system/web357framework/elements" />
+				<!-- END: JED Review -->
+
+				<!-- BEGIN: Check if Web357 Framework plugin exists -->
+				<field name="w357frmrk" id="w357frmrk" type="w357frmrk" addfieldpath="/plugins/system/cookiespolicynotificationbar/elements" />
+				<!-- END: Check if Web357 Framework plugin exists -->				
+			</fieldset>
+			
+			<!-- ::: BASE SETTINGS ::: -->
+			<fieldset name="basic_settings" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BASE_SETTINGS">
+				
+				<!-- BEGIN: Default Parameters -->
+				<field type="header" class="w357_large_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BASE_SETTINGS" />
+				<field name="position" type="radio" class="btn-group btn-group-yesno" default="bottom" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_POSITION_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_POSITION_DESC">
+					<option value="top">J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_TOP_LBL</option>
+					<option value="bottom">J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BOTTOM_LBL</option>
+				</field>
+
+				<field name="loadjQuery" type="radio" class="btn-group btn-group-yesno" default="1" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_LOAD_JQUERY_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_LOAD_JQUERY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="duration" type="text" default="60" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_DURATION_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_DURATION_DESC" />
+
+				<field name="animate_duration" type="text" default="2000" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_ANIMATE_DURATION_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_ANIMATE_DURATION_DESC" />
+				
+				<field name="limit" type="list" default="0" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_LIMIT_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_LIMIT_DESC">
+					<option value="0">J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_0_UNLIMITED</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</field>
+				
+				<field name="cookie_name" type="text" default="cookiesDirective" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_COOKIE_NAME_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_COOKIE_NAME_DESC" />
+				
+				<field name="show_in_iframes" type="radio" class="btn-group btn-group-yesno" default="0" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_SHOW_IN_IFRAMES_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_SHOW_IN_IFRAMES_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- END: Default Parameters -->
+				
+			</fieldset>
+				
+			<!-- ::: TEXTS FOR LANGUAGES ::: -->
+			<fieldset name="texts_for_languages" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_TEXTS_FOR_LANGUAGES">
+				
+				<!-- BEGIN: Texts for Languages -->
+				<field type="header" class="w357_large_header" label="Texts for Languages" />
+
+				<!-- BEGIN: Check if Web357 Framework J! Plugin is enabled -->
+				<field name="web357frameworkstatus" id="web357frameworkstatus" type="web357frameworkstatus" addfieldpath="/plugins/system/cookiespolicynotificationbar/elements" />
+				<!-- END: Check if Web357 Framework J! Plugin is enabled -->
+
+				<!-- END: Texts for Languages -->
+			</fieldset>
+			
+			<!-- ::: STYLING ::: -->
+			<fieldset name="styling" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_STYLING">
+			
+				<!-- BEGIN: Styling -->
+				<field type="header" class="w357_large_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_STYLING" />
+
+				<!-- Defaults -->
+				<field type="header" class="w357_small_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_DEFAULTS" />
+
+				<field name="center_alignment" type="radio" class="btn-group btn-group-yesno" default="0" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_CEMTER_ALIGNMENT_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_CEMTER_ALIGNMENT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="backgroundColor" type="color" default="#323A45" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BGCOLOR_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BGCOLOR_DESC" />
+
+				<field name="backgroundOpacity" type="list" default="95" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BACKGROUND_OPACITY_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BACKGROUND_OPACITY_DESC">
+					<option value="5">5%</option>
+					<option value="10">10%</option>
+					<option value="15">15%</option>
+					<option value="20">20%</option>
+					<option value="25">25%</option>
+					<option value="30">30%</option>
+					<option value="35">35%</option>
+					<option value="40">40%</option>
+					<option value="45">45%</option>
+					<option value="50">50%</option>
+					<option value="55">55%</option>
+					<option value="60">60%</option>
+					<option value="65">65%</option>
+					<option value="70">70%</option>
+					<option value="75">75%</option>
+					<option value="80">80%</option>
+					<option value="85">85%</option>
+					<option value="90">90%</option>
+					<option value="95">95% (recommended)</option>
+					<option value="100">100%</option>
+				</field>
+
+				<field name="height" type="text" default="auto" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_HEIGHT_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_HEIGHT_DESC" />
+
+				<field name="line_height" type="text" default="" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_LINE_HEIGHT_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_LINE_HEIGHT_DESC" />
+				
+				<field name="custom_css" type="textarea" default="" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_CUSTOM_CSS_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_CUSTOM_CSS_DESC" rows="6" cols="50" filter="raw" />
+
+				<!-- Message -->		
+				<field type="header" class="w357_small_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_MESSAGE" />
+				
+				<field name="enable_google_fonts_for_message" type="radio" class="btn-group btn-group-yesno" default="1" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_ENABLE_GOOGLE_FONTS_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_ENABLE_GOOGLE_FONTS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="google_font_family_for_message" id="google_font_family_for_message" type="text" default="Lato" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_GOOGLE_FONT_FAMILY_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_GOOGLE_FONT_FAMILY_DESC" />
+
+				<field name="fontColor" type="color" default="#F1F1F3" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_FONT_COLOR_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_FONT_COLOR_DESC" />
+				
+				<field name="linkColor" type="color" default="#FFF" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_LINK_COLOR_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_LINK_COLOR_DESC" />
+				
+				<field name="fontSize" type="list" default="12px" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_FONT_SIZE_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_FONT_SIZE_DESC">
+					<option value="10px">10px</option>
+					<option value="11px">11px</option>
+					<option value="12px">12px (recommended)</option>
+					<option value="13px">13px</option>
+					<option value="14px">14px</option>
+					<option value="15px">15px</option>
+					<option value="16px">16px</option>
+					<option value="17px">17px</option>
+					<option value="18px">18px</option>
+					<option value="19px">19px</option>
+					<option value="20px">20px</option>
+					<option value="21px">21px</option>
+					<option value="22px">22px</option>
+					<option value="23px">23px</option>
+					<option value="24px">24px</option>
+				</field>
+				
+				<!-- Buttons -->
+				<field type="header" class="w357_small_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BUTTONS" />
+				
+				<field name="enable_google_fonts_for_buttons" type="radio" class="btn-group btn-group-yesno" default="1" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_ENABLE_GOOGLE_FONTS_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_ENABLE_GOOGLE_FONTS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="google_font_family_for_buttons" id="google_font_family_for_buttons" type="text" default="Lato" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_GOOGLE_FONT_FAMILY_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_GOOGLE_FONT_FAMILY_DESC" />
+				
+				<field name="btn_font_size" type="list" default="12px" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_FONT_SIZE_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_FONT_SIZE_DESC">
+					<option value="10px">10px</option>
+					<option value="11px">11px</option>
+					<option value="12px">12px (recommended)</option>
+					<option value="13px">13px</option>
+					<option value="14px">14px</option>
+					<option value="15px">15px</option>
+					<option value="16px">16px</option>
+					<option value="17px">17px</option>
+					<option value="18px">18px</option>
+					<option value="19px">19px</option>
+					<option value="20px">20px</option>
+					<option value="21px">21px</option>
+					<option value="22px">22px</option>
+					<option value="23px">23px</option>
+					<option value="24px">24px</option>
+				</field>
+				
+				<field name="btn_border_radius" type="list" default="4px" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BTN_BORDER_RADIUS_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BTN_BORDER_RADIUS_DESC">
+					<option value="0px">0px</option>
+					<option value="1px">1px</option>
+					<option value="2px">2px</option>
+					<option value="3px">3px</option>
+					<option value="4px">4px (recommended)</option>
+					<option value="5px">5px</option>
+					<option value="6px">6px</option>
+					<option value="7px">7px</option>
+					<option value="8px">8px</option>
+					<option value="9px">9px</option>
+					<option value="10px">10px</option>
+					<option value="11px">11px</option>
+					<option value="12px">12px</option>
+					<option value="13px">13px</option>
+					<option value="14px">14px</option>
+					<option value="15px">15px</option>
+					<option value="16px">16px</option>
+					<option value="17px">17px</option>
+					<option value="18px">18px</option>
+					<option value="19px">19px</option>
+					<option value="20px">20px</option>
+					<option value="21px">21px</option>
+					<option value="22px">22px</option>
+					<option value="23px">23px</option>
+					<option value="24px">24px</option>
+				</field>
+				
+				<!-- "Ok, I've understood" Button -->
+				<field type="header" class="w357_small_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_OK_BUTTON" />
+				
+				<field name="ok_btn_normal_font_color" type="color" default="#FFFFFF" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_NORMAL_FONT_COLOR_LBL" />
+				<field name="ok_btn_hover_font_color" type="color" default="#FFFFFF" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_HOVER_FONT_COLOR_LBL" />
+				<field name="ok_btn_normal_bg_color" type="color" default="#3B89C7" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_NORMAL_BG_COLOR_LBL" />
+				<field name="ok_btn_hover_bg_color" type="color" default="#3176AF" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_HOVER_BG_COLOR_LBL" />
+
+				<!-- "More Info" Button -->
+				<field type="header" class="w357_small_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_MORE_INFO_BUTTON" />				
+				<field name="more_btn_normal_font_color" type="color" default="#FFFFFF" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_NORMAL_FONT_COLOR_LBL" />
+				<field name="more_btn_hover_font_color" type="color" default="#FFFFFF" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_HOVER_FONT_COLOR_LBL" />
+				<field name="more_btn_normal_bg_color" type="color" default="#7B8A8B" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_NORMAL_BG_COLOR_LBL" />
+				<field name="more_btn_hover_bg_color" type="color" default="#697677" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_HOVER_BG_COLOR_LBL" />
+				
+				<!-- END: Styling -->
+				
+			</fieldset>
+			
+			<!-- ::: ADVANCED SETTINGS ::: -->
+			<fieldset name="advanced" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_ADVANCED_SETTINGS">
+			
+				<!-- BEGIN: Include or Exlude menu items -->
+				<field type="header" class="w357_large_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_PAGES_TO_DISPLAY_HEADER" />
+				<field name="inlude_menu_items" type="menuitem" multiple="true" default="" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_INCLUDE_PAGES_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_INCLUDE_PAGES_DESC" />
+				<field name="exclude_menu_items" type="menuitem" multiple="true" default="" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_EXCLUDE_PAGES_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_EXCLUDE_PAGES_DESC" />
+				<!-- END: Include or Exlude menu items -->
+			
+				<!-- BEGIN: Block Cookies -->
+				<field type="header" class="w357_large_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BLOCK_COOKIES_HEADER" />
+				<field name="blockCookies" type="radio" class="btn-group btn-group-yesno" default="0" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BLOCK_COOKIES_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BLOCK_COOKIES_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="noteBlockCookies" type="note" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BLOCK_COOKIES_INFO" showon="blockCookies:1" />
+				<field name="blockCookiesText" type="radio" class="btn-group btn-group-yesno" default="0" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BLOCKED_COOKIES_DISPLAY_MSG_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_BLOCKED_COOKIES_DISPLAY_MSG_DESC" showon="blockCookies:1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- END: Block Cookies -->
+				
+				<!-- BEGIN: Debugging -->
+				<field type="header" class="w357_large_header" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_DEBUG_HEADER" />
+				<field name="debug_mode" type="radio" class="btn-group btn-group-yesno" default="0" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_DEBUG_MODE_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_DEBUG_MODE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="always_display" type="radio" class="btn-group btn-group-yesno" default="0" label="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_ALWAYS_DISPLAY_LBL" description="J357_PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR_ALWAYS_DISPLAY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="rmvcookies" id="rmvcookies" type="rmvcookies" addfieldpath="/plugins/system/cookiespolicynotificationbar/elements" />
+				<field name="langmigration" id="langmigration" type="langmigration" addfieldpath="/plugins/system/cookiespolicynotificationbar/elements" />
+				<!-- END: Debugging -->
+				
+			</fieldset>
+
+			<fieldset name="description" label="W357FRM_HEADER_DESCRIPTION">
+
+				<!-- BEGIN: Description -->
+				<field type="header" class="w357_large_header" label="W357FRM_HEADER_DESCRIPTION" />
+				<field name="description" id="description" type="description" extension_type="plugin" extension_name="cookiespolicynotificationbar" real_name="PLG_SYSTEM_COOKIESPOLICYNOTIFICATIONBAR" plugin_type="system" label="" addfieldpath="/plugins/system/web357framework/elements" />
+				<!-- END: Description -->
+			
+			</fieldset>
+			
+			<fieldset name="about" label="W357FRM_HEADER_ABOUT_WEB357">
+				
+				<!-- BEGIN: About Web357 -->
+				<field type="header" class="w357_large_header" label="W357FRM_HEADER_ABOUT_WEB357" />
+				<field name="about" id="about" type="about" label="" addfieldpath="/plugins/system/web357framework/elements" />
+				<!-- END: About Web357 -->
+				
+			</fieldset>
+			
+		</fields>
+	</config>
+	
+	                                            <updateservers>
+        <server type="extension" priority="1" name="Cookies Policy Notification Bar (Pro version)"><![CDATA[http://updates.web357.eu/cookiespolicynotificationbar/cookiespolicynotificationbar_pro.xml]]></server>
+    </updateservers>	
+
+</extension>

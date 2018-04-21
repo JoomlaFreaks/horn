@@ -1,0 +1,15 @@
+/* BEGIN: Cookies Policy Notification Bar - J! system plugin (Powered by: Web357.eu) */
+@import url(https://fonts.googleapis.com/css?family=Lato);
+#w357_cpnb {}
+#w357_cpnb #w357_cpnb_outer {}
+#w357_cpnb #w357_cpnb_inner {}
+#w357_cpnb #w357_cpnb_message { font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important; }
+#w357_cpnb #w357_cpnb_buttons, #cpnb_modal #w357_cpnb_button_ok_modal { font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important; }
+#w357_cpnb a.w357_cpnb_button, #cpnb_modal a.w357_cpnb_button { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; font-size: 12px; }
+#w357_cpnb a#w357_cpnb_button_ok, #cpnb_modal a#w357_cpnb_button_ok_modal { color: #ffffff; background-color: #3b89c7; }
+#w357_cpnb a#w357_cpnb_button_ok:hover, #w357_cpnb a#w357_cpnb_button_ok:focus, #cpnb_modal a#w357_cpnb_button_ok_modal:hover, #cpnb_modal a#w357_cpnb_button_ok_modal:focus { color: #ffffff; background-color: #3176af; }
+#w357_cpnb a#w357_cpnb_button_more { color: #ffffff; background-color: #7b8a8b; }
+#w357_cpnb a#w357_cpnb_button_more:hover, #w357_cpnb a#w357_cpnb_button_more:focus { color: #ffffff; background-color: #697677; }
+#w357_cpnb #w357_cpnb_message a { color: #ffffff !important; font-weight: 700; text-decoration: none !important; }
+#w357_cpnb #w357_cpnb_message a:hover { text-decoration: underline !important; }
+/* END: Cookies Policy Notification Bar - J! system plugin (Powered by: Web357.eu) */
